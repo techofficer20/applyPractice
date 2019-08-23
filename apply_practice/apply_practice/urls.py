@@ -19,4 +19,6 @@ import mainapp.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', mainapp.views.index, name = 'index'),
+    path('new/', mainapp.views.new, name = 'new'),
+    path('create/', mainapp.views.create, name = 'create'),
 ]

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    a, a:hover, a:visited
+    {
+        text-decoration: none;
+    }
+    </style>
+    <title>강의 미리담기</title>
+</head>
+
+<body>
+    <div class="container">
+        <br/>
+        <a href="{% url 'index' %}">⬅️미리담기 현황 창</a>
+        <br />
+        <br />
+        <div class="card">
+            <div class="card-header">
+                강의 미리담기 추가
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <form action="{% url 'create' %}" method="GET">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">학년</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="학년 작성 (ex: 1) (없으면 0)" name = "grade" required>
+                        </div>
+                        
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">강좌번호</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="강좌번호 작성 (ex: 9999)" name = "lec_num" required>
+                        </div>
+                        
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">교과목명</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="교과목명 작성 (ex: 채플)" name = "lec_title" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">교과목번호</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="교과목번호 작성 (ex: 교필 123)" name = "lec_num2" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">학점</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="학점 작성 (ex: 1) (0학점이면 그대로 0)" name = "lec_value" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">시간</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="시간 작성 (ex: 1)" name = "lec_time" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">담당교수</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="담당교수 작성 (ex: 홍길동) (없으면 none)" name = "lec_prof" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">신청</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="신청된 인원 작성 (ex: 50) (0이면 그대로 0)" name = "lec_success" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">제한</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="제한 인원 작성 (ex: 50) (0이면 그대로 0)" name = "lec_limit" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">단계</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="단계 작성 (ex: R2) (없으면 none)" name = "lec_stair" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">강의시간</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="강의 시간 작성 (ex: 월 15:00-15:50 (Y1234), 수 15:00-15:50 (Y1234)" name = "lec_time2" required>
+                        </div>
+                    <button class = "btn btn-primary">담기</button>
+                    </form>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
