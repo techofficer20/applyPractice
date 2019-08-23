@@ -4,9 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .need_center
+        {
+            text-align: center;
+        }
+        tr:nth-child(2n-1)
+        {
+            background-color: #CFE1ED;
+        }
+        a, a:hover, a:visited
+        {
+            text-decoration: none;
+        }
+        #last_row ul
+        {
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+            color: blue;
+        }
+        #last_comment
+        {
+            color: red;
+        }
+        </style>
     <title>명지대 수강신청 연습 사이트</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <table border = "1">
+        <tr>
+            <th>학년</th>
+            <th>강좌번호</th>
+            <th>교과목명</th>
+            <th>교과목번호</th>
+            <th>학점</th>
+            <th>시간</th>
+            <th>담당교수</th>
+            <th>신청</th>
+            <th>제한</th>
+            <th>단계</th>
+            <th>강의시간</th>
+            <th>수강신청</th>
+            <th>선택</th>
+        </tr>
+        {% for lecture_obj in lec_obj %}
+        <tr>
+            <td class = "need_center">{{lecture_obj.grade}}</td>
+            <td class = "need_center">{{lecture_obj.lec_num}}</td>
+            <td>{{lecture_obj.lec_title}}</td>
+            <td class = "need_center">{{lecture_obj.lec_num2}}</td>
+            <td class = "need_center">{{lecture_obj.lec_value}}</td>
+            <td class = "need_center">{{lecture_obj.lec_time}}</td>
+            <td class = "need_center">{{lecture_obj.lec_prof}}</td>
+            <td class = "need_center">{{lecture_obj.lec_success}}</td>
+            <td class = "need_center">{{lecture_obj.lec_limit}}</td>
+            <td>{{lecture_obj.lec_stair}}</td>
+            <td>{{lecture_obj.lec_time2}}</td>
+            <td class = "need_center"><a href = "#">[신청]</a></td>
+            <td class = "need_center"><a href = "##">[삭제]</a></td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
